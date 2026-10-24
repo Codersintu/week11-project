@@ -26,6 +26,7 @@ A full-stack blog application built with **React, TypeScript, Tailwind CSS, Node
 - Express.js
 - MongoDB
 
+### BACKEND_URL="https://week10-data-storm-3.onrender.com"
 
 ### 1. Clone the Repository
 
