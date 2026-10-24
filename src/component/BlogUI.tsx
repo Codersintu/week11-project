@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const API_URL = import.meta.env.VITE_API_URL;
+import { API_URL } from '../api';
 
 function BlogUI() {
   const [showForm, setShowForm] = useState(false);
