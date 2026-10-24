@@ -1,7 +1,6 @@
-
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const API_URL = import.meta.env.API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 
 function BlogUI() {
   const [showForm, setShowForm] = useState(false);
@@ -11,7 +10,6 @@ function BlogUI() {
   const [loading, setLoading] = useState(false);
   const [errors, setError] = useState<string | null>(null);
   const [image, setImage] = useState<File | null>(null);
-
   
 
   useEffect(() => {
