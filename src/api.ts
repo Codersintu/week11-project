@@ -1,1 +1,1 @@
-export const API_URL="https://week10-data-storm-3.onrender.com/";
+export const API_URL="https://week10-data-storm-3.onrender.com";
