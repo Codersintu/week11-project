@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+const API_URL = import.meta.env.API_URL;
+
 function BlogUI() {
   const [showForm, setShowForm] = useState(false);
   const [title, setTitle] = useState('');
@@ -20,7 +22,7 @@ function BlogUI() {
   const getPosts=async () => {
     try {
     setLoading(true);
-    const response = await axios.get('http://localhost:8001/posts');
+    const response = await axios.get(`${API_URL}/posts`);
     setPosts(response.data.posts);
     setLoading(false);
     console.log("response.data:", response.data);
@@ -44,7 +46,7 @@ function BlogUI() {
       formData.append('image', image);
     }
     try {
-      await axios.post('http://localhost:8001/posts', formData,{
+      await axios.post(`${API_URL}/posts`, formData,{
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -68,7 +70,7 @@ function BlogUI() {
 
   const deletePost = async (id: string) => {
     try {
-      await axios.delete(`http://localhost:8001/posts/${id}`);
+      await axios.delete(`${API_URL}/posts/${id}`);
       setError(null);
       getPosts();
     } catch (error:any) {
